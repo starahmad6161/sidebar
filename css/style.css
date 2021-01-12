@@ -62,6 +62,12 @@
 {
     background-color: #0972e2;
 }
+.sidebar.show .inner-sidebar .side-content
+{
+    overflow: hidden;
+    max-height: 83vh;
+    overflow-y: auto;
+}
 .sidebar.show .inner-sidebar .side-content .image
 {
     width: 100%;
