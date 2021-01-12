@@ -11,45 +11,30 @@
 
 <body>
 
-
-    <div class="sidebar-overlay"></div>
+    <!--
+        <div class="sidebar-overlay show"></div>
+    -->
     <!--Sidebar-->
-    <div class="sidebar py-4">
-        <span class="close-sidebar bg-white border rounded-circle d-flex justify-content-center align-items-center ml-auto pointer">X</span>
-        <div class="brand-name text-white px-4 mb-3">
-            BrandName
+    <div class="sidebar show">
+        <div class="open-sidebar p-1 pointer">
+            <img class="open-icon w-100" src="https://via.placeholder.com/150" alt="icon">
         </div>
-        <!--List Items-->
-        <ul class="list-items list-unstyled">
-            <!--Item #1-->
-            <li class="underline dropdown px-4 pointer text-white">
-                <div class="d-flex justify-content-between py-3">
-                    <span>Home</span>
-                    <span>&#8628;</span>
+        <div class="inner-sidebar">
+            <!--Sidebar Head (Database and logo)-->
+            <div class="side-head py-4 d-flex">
+                <div class="brand-name text-white px-4 mb-3 d-flex align-items-center my-auto">
+                    <img class="icon mr-2" src="https://via.placeholder.com/150" alt="icon">
+                    Database
                 </div>
-                <ul class="list-unstyled dropdown-items">
-                    <li class="py-2 px-4 dropdown_item">Home #1</li>
-                    <li class="py-2 px-4 dropdown_item">Home #2</li>
-                </ul>
-            </li>
-            <!--Item #1-->
-            <li class="underline dropdown px-4 pointer text-white">
-                <div class="d-flex justify-content-between py-3">
-                    <span>Profile</span>
-                    <span>&#8628;</span>
-                </div>
-                <ul class="list-unstyled dropdown-items">
-                    <li class="py-2 px-4 dropdown_item">Portfolio #1</li>
-                    <li class="py-2 px-4 dropdown_item">Portfolio #2</li>
-                </ul>
-            </li>
-            <!--Item #1-->
-            <li class="underline px-4 py-3 pointer text-white">About</li>
-        </ul>
+            </div>
+            <!--Sidebar content-->
+            <div class="side-content overflow-hidden py-4 px-3">
+                <img class="image mx-auto" src="imgs/social_media_db_diagram_vertical.png" alt="image">
+            </div>
+        </div>
     </div>
     <!--Main Content-->
     <div class="main-content">
-        <button class="open-sidebar">Open Sidebar</button>
         Content
     </div>
 
@@ -60,19 +45,17 @@
     <script src="js/main.js"></script>
     <script>
         $(".open-sidebar").on("click", function() {
-            $(".sidebar").addClass("show");
-            $(".sidebar-overlay").addClass("show");
+            $(".sidebar").toggleClass("show");
+            /*
+            $(".sidebar-overlay").toggleClass("show");
+            */
         });
-        $(".close-sidebar, .sidebar-overlay").on("click", function() {
-            console.log("sss");
-            $(".sidebar").removeClass("show");
-            $(".sidebar-overlay").removeClass("show");
-        });
+        /*
         $(".sidebar .dropdown").on("click", function() {
-            console.log($(this).find(".dropdown-items"));
             $(this).siblings().find(".dropdown-items").slideUp(200);
             $(this).find(".dropdown-items").slideDown(200);
         });
+        */
     </script>
 </body>
 
